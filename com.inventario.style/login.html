@@ -30,11 +30,15 @@
 
             const username = document.getElementById('username').value.trim();
             const password = document.getElementById('password').value.trim();
-            
+
+            // Verificar si las credenciales son correctas
             if (username === 'admin' && password === 'password123') {
+                // Guardar el estado de inicio de sesión en localStorage
                 localStorage.setItem('loggedIn', 'true');
+                // Redirigir a la página principal
                 window.location.href = 'index.html';
             } else {
+                // Mostrar mensaje de error si las credenciales son incorrectas
                 document.getElementById('login-error').textContent = 'Usuario o contraseña incorrectos.';
             }
         });

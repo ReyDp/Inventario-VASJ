@@ -18,13 +18,15 @@
             <li><a href="#" data-section="reports">Reportes</a></li>
             <li><a href="#" data-section="settings">Configuración</a></li>
         </ul>
-        <a href="login.html">Iniciar Sesión</a> 
+        <a href="login.html">Iniciar Sesión</a> <!-- Enlace a la página de inicio de sesión -->
     </div>
 
     <div class="main-content">
+        <!-- Sección Inicio -->
         <div id="home" class="section">
             <h1>Productos con Bajo Stock</h1>
             <ul id="low-stock-list">
+                <!-- Los productos con bajo stock se agregarán aquí dinámicamente -->
             </ul>
         </div>
 
@@ -115,9 +117,12 @@
 
     <script>
         window.onload = () => {
+            // Verificar si el usuario ha iniciado sesión
             if (localStorage.getItem('loggedIn') !== 'true') {
+                // Redirigir al login si no está logueado
                 window.location.href = 'login.html';
             } else {
+                // Inicializar navegación y otros componentes
                 Navigation.initializeNavigation();
             }
         };
