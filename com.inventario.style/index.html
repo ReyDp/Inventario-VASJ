@@ -18,45 +18,43 @@
             <li><a href="#" data-section="reports">Reportes</a></li>
             <li><a href="#" data-section="settings">Configuración</a></li>
         </ul>
+        <a href="login.html">Iniciar Sesión</a> 
     </div>
 
     <div class="main-content">
-        <!-- Sección Inicio -->
         <div id="home" class="section">
             <h1>Productos con Bajo Stock</h1>
             <ul id="low-stock-list">
-                <!-- Los productos con bajo stock se agregarán aquí dinámicamente -->
             </ul>
         </div>
 
         <!-- Sección Agregar Producto -->
-<div id="add-product" class="section" style="display: none;">
-    <h1>Agregar Nuevo Producto</h1>
-    <form id="inventory-form">
-        <div class="form-group">
-            <label for="product-name">Nombre:</label>
-            <input type="text" id="product-name" required>
+        <div id="add-product" class="section" style="display: none;">
+            <h1>Agregar Nuevo Producto</h1>
+            <form id="inventory-form">
+                <div class="form-group">
+                    <label for="product-name">Nombre:</label>
+                    <input type="text" id="product-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-description">Descripción:</label>
+                    <input type="text" id="product-description">
+                </div>
+                <div class="form-group">
+                    <label for="product-quantity">Cantidad:</label>
+                    <input type="number" id="product-quantity" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-price">Precio:</label>
+                    <input type="number" id="product-price" min="0" step="0.01">
+                </div>
+                <div class="form-group">
+                    <label for="product-lowstock">Límite de Stock para Bajo Inventario:</label>
+                    <input type="number" id="product-lowstock" min="1" required>
+                </div>
+                <button type="submit">Agregar Producto</button>
+            </form>
         </div>
-        <div class="form-group">
-            <label for="product-description">Descripción:</label>
-            <input type="text" id="product-description">
-        </div>
-        <div class="form-group">
-            <label for="product-quantity">Cantidad:</label>
-            <input type="number" id="product-quantity" min="0" required>
-        </div>
-        <div class="form-group">
-            <label for="product-price">Precio:</label>
-            <input type="number" id="product-price" min="0" step="0.01">
-        </div>
-        <div class="form-group">
-            <label for="product-lowstock">Límite de Stock para Bajo Inventario:</label>
-            <input type="number" id="product-lowstock" min="1" required>
-        </div>
-        <button type="submit">Agregar Producto</button>
-    </form>
-</div>
-
 
         <!-- Sección Escanear QR -->
         <div id="add-qr" class="section" style="display: none;">
@@ -99,7 +97,6 @@
         <div id="settings" class="section" style="display: none;">
             <h1>Configuración General</h1>
             <p>Aquí podrás ajustar configuraciones generales del sistema de inventario.</p>
-            <!-- Puedes agregar más configuraciones generales si lo deseas -->
         </div>
     </div>
 
@@ -116,5 +113,14 @@
     <script src="../com.inventario.js/qr.js" defer></script>
     <script src="../com.inventario.js/script.js" defer></script>
 
+    <script>
+        window.onload = () => {
+            if (localStorage.getItem('loggedIn') !== 'true') {
+                window.location.href = 'login.html';
+            } else {
+                Navigation.initializeNavigation();
+            }
+        };
+    </script>
 </body>
 </html>
