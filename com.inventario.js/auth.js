@@ -1,16 +1,23 @@
 // auth.js
+const Auth = (function() {
+    // Usuarios simulados (puedes cambiar esto a una llamada real de autenticación o localStorage)
+    const users = [
+        { username: 'admin', password: 'admin123' },
+        { username: 'user1', password: 'user123' }
+    ];
 
-document.getElementById('login-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    const username = document.getElementById('username').value.trim();
-    const password = document.getElementById('password').value.trim();
-
-    // Ejemplo simple de autenticación (esto debe reemplazarse con una autenticación real)
-    if (username === 'admin' && password === 'password123') {
-        // Redirigir a la página principal (index.html)
-        window.location.href = 'index.html';
-    } else {
-        document.getElementById('login-error').textContent = 'Usuario o contraseña incorrectos.';
+    // Función para validar el login
+    async function login(username, password) {
+        // Simula un retardo como si fuera una llamada a un servidor externo
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                const user = users.find(user => user.username === username && user.password === password);
+                resolve(!!user);  // Retorna true si encuentra un usuario válido
+            }, 1000);
+        });
     }
-});
+
+    return {
+        login
+    };
+})();

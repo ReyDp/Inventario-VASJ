@@ -9,32 +9,21 @@
 <body>
     <div class="login-container">
         <h1>Inicio de Sesión</h1>
-        <form id="loginForm">
+        <form id="login-form">
             <label for="username">Usuario:</label>
-            <input type="text" id="username" required>
+            <input type="text" id="username" name="username" placeholder="Ingresa tu usuario" required>
 
             <label for="password">Contraseña:</label>
-            <input type="password" id="password" required>
+            <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
 
             <button type="submit">Ingresar</button>
         </form>
         <p id="login-error" class="error-message"></p>
     </div>
 
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-
-            if (username === 'admin' && password === 'password123') {
-                localStorage.setItem('loggedIn', 'true');
-                window.location.href = 'index.html';
-            } else {
-                document.getElementById('login-error').textContent = 'Usuario o contraseña incorrectos.';
-            }
-        });
-    </script>
+    <!-- Incluimos los scripts externos -->
+    <script src="auth.js"></script>
+    <script src="login.js"></script>
 </body>
 </html>
+

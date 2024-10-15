@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Inventario Básico</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Asegúrate de que esta ruta sea correcta -->
 </head>
 <body>
     <div class="sidebar">
@@ -123,9 +123,13 @@
                 window.location.href = 'login.html';
             } else {
                 // Inicializar navegación y otros componentes
-                Navigation.initializeNavigation();
+                if (typeof Navigation !== 'undefined') {
+                    Navigation.initializeNavigation();
+                } else {
+                    console.error("Módulo Navigation no cargado correctamente.");
+                }
             }
         };
     </script>
 </body>
-</html>s
+</html>
