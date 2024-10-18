@@ -1,0 +1,30 @@
+# Archivos de bloqueo de npm
+package-lock.json
+
+# Archivos de entorno locales (variables sensibles)
+.env
+
+# Archivos temporales del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos temporales de logs
+logs/
+*.log
+npm-debug.log*
+
+# Archivos de base de datos SQLite (si se utiliza localmente)
+*.sqlite
+*.sqlite3
+
+# Archivos de configuración del editor de texto
+.vscode/
+.idea/
+
+# Otros posibles archivos que no se quieren rastrear
+temp/
+*.tmp
+
+# Archivos de build (si generas archivos específicos al compilar)
+dist/
+build/
