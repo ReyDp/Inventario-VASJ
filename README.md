@@ -28,8 +28,8 @@ Este proyecto es un sistema de inventario básico para una empresa de vidrios y 
 1. Clona el repositorio:
 
    ```bash
-   git clone <URL-del-repositorio>
-   cd <nombre-del-repositorio>
+   git clone https://github.com/ReyDp/Inventario-VASJ.git
+   cd Inventario-VASJ
 
 ## Uso
 -   Accede a la aplicación a través de tu navegador web.
