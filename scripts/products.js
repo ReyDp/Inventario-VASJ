@@ -1,5 +1,3 @@
-// products.js
-
 const Products = (() => {
     let products = Storage.loadProducts();
 
@@ -20,10 +18,13 @@ const Products = (() => {
 
     const getProducts = () => products;
 
+    const getProductByIndex = (index) => products[index];
+
     return {
         addProduct,
         deleteProduct,
         editProduct,
-        getProducts
+        getProducts,
+        getProductByIndex
     };
 })();

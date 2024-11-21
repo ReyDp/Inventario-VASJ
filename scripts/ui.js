@@ -1,4 +1,4 @@
-// ui.js
+//import Auth from "./auth";
 
 const UI = (() => {
     const renderTable = () => {
@@ -18,12 +18,22 @@ const UI = (() => {
                 <td>${product.price !== null ? `$${product.price.toFixed(2)}` : 'N/A'}</td>
                 <td>${product.lowStockLimit}</td>
                 <td class="actions">
-                    <button class="edit" data-index="${index}">Editar</button>
                     <button class="delete" data-index="${index}">Eliminar</button>
                 </td>
             `;
 
             inventoryTableBody.appendChild(row);
+        });
+
+        // Delegar el evento de clic a los botones de "Editar" y "Eliminar"
+        inventoryTableBody.addEventListener('click', (event) => {
+            const target = event.target;
+
+            if (target.classList.contains('delete')) {
+                const index = target.getAttribute('data-index');
+                Products.deleteProduct(index); // Eliminar el producto
+                UI.renderTable(); // Volver a renderizar la tabla después de eliminar
+            }
         });
     };
 
@@ -49,7 +59,13 @@ const UI = (() => {
     };
 
     const populateForm = (product, index) => {
-        // Implementa si es necesario para la edición
+        const form = document.getElementById('inventory-form');
+        form.elements['name'].value = product.name;
+        form.elements['description'].value = product.description;
+        form.elements['quantity'].value = product.quantity;
+        form.elements['price'].value = product.price || '';
+        form.elements['lowStockLimit'].value = product.lowStockLimit;
+        form.elements['productIndex'].value = index; // Campo oculto para rastrear el índice
     };
 
     return {

@@ -84,12 +84,6 @@ fetch('http://localhost:3000/api/productos', {
     UI.resetForm(); // Resetea el formulario
     alert('Producto agregado exitosamente.');
 })
-.catch(error => {
-    console.error('Error:', error);
-    alert('Hubo un problema al agregar el producto.');
-});
-
-
     // Añadir al array y guardar
     Products.addProduct(newProduct);
 
@@ -108,4 +102,4 @@ fetch('http://localhost:3000/api/productos', {
     UI.resetForm();
 
     alert('Producto agregado exitosamente.');
-});
+})
