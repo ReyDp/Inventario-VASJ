@@ -1,3 +1,5 @@
+<!--index.html-->
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -17,6 +19,8 @@
             <li><a href="#" data-section="list-products">Lista de Productos</a></li>
             <li><a href="#" data-section="reports">Reportes</a></li>
             <li><a href="#" data-section="settings">Configuración</a></li>
+            <li><a href="#" id="logout">Cerrar sesión</a></li>
+
         </ul>
     </div>
 
@@ -127,6 +131,15 @@
             <!-- Puedes agregar más configuraciones generales si lo deseas -->
         </div>
     </div>
+    <!-- Modal de Confirmación -->
+    <div id="logout-modal" class="modal">
+        <div class="modal-content">
+            <p>¿Estás seguro de que quieres cerrar sesión?</p>
+            <button id="confirm-logout">Aceptar</button>
+            <button id="cancel-logout">Cancelar</button>
+        </div>
+    </div>
+
 
     <!-- Incluir las librerías necesarias -->
     <script src="https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js"></script>

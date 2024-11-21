@@ -1,29 +1,36 @@
+<!--login.html-->
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio de Sesión</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Login - Sistema de Inventario</title>
+    <link rel="stylesheet" href="styleslogin.css">  
 </head>
 <body>
+
+    <!-- Formulario de Login -->
     <div class="login-container">
-        <h1>Inicio de Sesión</h1>
+        <h2>Iniciar sesión</h2>
         <form id="login-form">
-            <label for="username">Usuario:</label>
-            <input type="text" id="username" name="username" placeholder="Ingresa tu usuario" required>
+            <div class="input-group">
+                <label for="username">Nombre de usuario</label>
+                <input type="text" id="username" name="username" placeholder="Ingrese su nombre de usuario" required>
+            </div>
 
-            <label for="password">Contraseña:</label>
-            <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
+            <div class="input-group">
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" placeholder="Ingrese su contraseña" required>
+            </div>
 
-            <button type="submit">Ingresar</button>
+            <button type="submit">Iniciar sesión</button>
         </form>
-        <p id="login-error" class="error-message"></p>
+        <div id="error-message" style="display: none; color: red; margin-top: 10px;"></div>  <!-- Mensaje de error -->
     </div>
 
-    <!-- Incluimos los scripts externos -->
-    <script src="auth.js"></script>
-    <script src="login.js"></script>
+    <!-- Referencia a los scripts -->
+    <script src="scripts/login.js" type="module"></script> 
 </body>
 </html>
-

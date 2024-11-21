@@ -1,4 +1,7 @@
 // login.js
+
+import Auth from './auth.js'; 
+
 document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('login-form');
     const errorMessage = document.getElementById('error-message');
@@ -15,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (isAuthenticated) {
             // Si la autenticación es exitosa, redirige al dashboard o página principal
-            window.location.href = 'index.html';
+            window.location.href = 'index.html';  // Asegúrate de que esta ruta es correcta
         } else {
             // Si falla, muestra el mensaje de error
             errorMessage.textContent = 'Usuario o contraseña incorrectos';

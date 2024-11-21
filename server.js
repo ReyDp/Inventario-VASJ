@@ -1,3 +1,5 @@
+//server.js
+
 const express = require('express');
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
@@ -12,10 +14,10 @@ app.use(bodyParser.json());
 
 // Configuración de la base de datos
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'Electronica14@',
-    database: 'tu_base_de_datos'
+    host: 'DB_HOST',
+    user: 'DB_USER',
+    password: 'DB_PASSWORD',
+    database: 'DATABASE'
 });
 
 // Conectar a la base de datos
