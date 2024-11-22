@@ -319,7 +319,7 @@ footer img {
 /* =====================================================
    Sección Configuración
 ===================================================== */
-#settings {
+/* #settings {
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 8px;
@@ -330,7 +330,7 @@ footer img {
 #settings h1 {
     text-align: center;
     margin-bottom: 20px;
-    color: #333;
+    color: #660b0b;
 }
 
 #settings-form {
@@ -361,7 +361,7 @@ footer img {
 
 #settings-form button[type="submit"] {
     padding: 10px 20px;
-    background-color: #28a745; /* Verde para acción positiva */
+    background-color: #28a745;
     color: white;
     border: none;
     border-radius: 5px;
@@ -372,6 +372,77 @@ footer img {
 
 #settings-form button[type="submit"]:hover {
     background-color: #218838;
+} */
+
+
+
+#settings.section {
+    display: none;
+    padding: 20px;
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    bottom: 70px;
+    left: 80px;
+}
+
+
+#settings h1 {
+    font-size: 8px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+
+#settings p {
+    font-size: 12px;
+   text-align: center;
+    margin-bottom: 15px;
+}
+
+
+#settings a:hover {
+    text-decoration: underline;
+}
+
+.carousel {
+    width: 100%;  
+    height: 60vh; 
+    border-radius: 5px; 
+    overflow: hidden; 
+    
+}
+
+.carousel-inner {
+    display: flex; 
+    width: 100%;
+    height: 100%; 
+}
+
+.carousel-inner img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+}
+
+.carousel-indicators li {
+    background-color: #004080;
+}
+
+.carousel-indicators .active {
+    background-color: #007bff;
 }
 
 /*---------------------------
